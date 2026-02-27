@@ -84,6 +84,12 @@ public class PlayerMovement : MonoBehaviour
       isChargingJump = false;
       jumpForce = minJumpForce;
     }
+
+    if (Input.GetKeyDown(KeyCode.R))
+    {
+      transform.position = new(0,2,0);
+      velocity = 0f;
+    }
   }
 
   private void ApplyHorseGravity()
@@ -106,6 +112,16 @@ public class PlayerMovement : MonoBehaviour
     {
       isGrounded = true;
       isChargingJump = false;
+    }
+
+  }
+
+  private void OnTriggerEnter(Collider other)
+  {
+    if(other.gameObject.layer == 6)
+    {
+      velocity *= 2;
+      Destroy(other.gameObject);
     }
   }
 
