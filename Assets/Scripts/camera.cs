@@ -6,6 +6,6 @@ public class camera : MonoBehaviour
 
   void Update()
   {
-    transform.position = player.position;
+    transform.position = new(player.position.x, 0f, player.position.z);
   }
 }
