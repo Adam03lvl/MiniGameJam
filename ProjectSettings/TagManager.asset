@@ -6,6 +6,7 @@ TagManager:
   tags:
   - boost
   - obstacle
+  - hurdle
   layers:
   - Default
   - TransparentFX
