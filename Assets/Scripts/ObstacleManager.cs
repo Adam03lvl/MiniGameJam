@@ -16,8 +16,8 @@ public class ObstacleManager : MonoBehaviour
   [Header("Gameplay")]
   public int obstacleLimit;
 
-  private Dictionary<Vector3, GameObject> obstaclePositions =
-      new Dictionary<Vector3, GameObject>();
+  private Dictionary<Vector2, GameObject> obstaclePositions =
+      new Dictionary<Vector2, GameObject>();
 
   void Start()
   {
@@ -36,7 +36,7 @@ public class ObstacleManager : MonoBehaviour
   {
     int randomIndex = Random.Range(0, ObstaclePrefabs.Length);
 
-    Vector3 randomPosition = Vector3.zero;
+    Vector2 randomPosition = Vector3.zero;
     bool foundValidPosition = false;
     int attempts = 0;
 
@@ -45,15 +45,15 @@ public class ObstacleManager : MonoBehaviour
     while (!foundValidPosition && attempts < maxAttempts)
     {
       float randomX = Random.Range(
-          bounds.min.x + 20,
-          bounds.max.x - 20
+          bounds.min.x + 15,
+          bounds.max.x - 15
       );
       float randomZ = Random.Range(
-          bounds.min.z + 20,
-          bounds.max.z - 20
+          bounds.min.z + 15,
+          bounds.max.z - 15
       );
 
-      randomPosition = new Vector3(randomX, 0, randomZ);
+      randomPosition = new Vector2(randomX, randomZ);
 
       if (IsPositionValid(randomPosition))
       {
@@ -68,7 +68,7 @@ public class ObstacleManager : MonoBehaviour
       float yRot = Random.Range(0f, 360f);
       Quaternion rotation = Quaternion.Euler(0, yRot, 0);
 
-      GameObject newObstacle = Instantiate(ObstaclePrefabs[randomIndex], randomPosition, rotation);
+      GameObject newObstacle = Instantiate(ObstaclePrefabs[randomIndex], new(randomPosition.x, 0, randomPosition.y), rotation);
       obstaclePositions.Add(randomPosition, newObstacle);
     }
     else
@@ -81,11 +81,11 @@ public class ObstacleManager : MonoBehaviour
     }
   }
 
-  private bool IsPositionValid(Vector3 position)
+  private bool IsPositionValid(Vector2 position)
   {
     foreach (var existingPosition in obstaclePositions.Keys)
     {
-      if (Vector3.Distance(position, existingPosition) < minDistanceBetweenObstacles)
+      if (Vector2.Distance(position, existingPosition) < minDistanceBetweenObstacles)
       {
         return false;
       }
@@ -95,10 +95,11 @@ public class ObstacleManager : MonoBehaviour
 
   public void RemoveObstacle(Vector3 position)
   {
-    if (obstaclePositions.ContainsKey(position))
+    Vector2 pos = new(position.x, position.z);
+    if (obstaclePositions.ContainsKey(pos))
     {
-      GameObject obstacleToRemove = obstaclePositions[position];
-      obstaclePositions.Remove(position);
+      GameObject obstacleToRemove = obstaclePositions[pos];
+      obstaclePositions.Remove(pos);
       Destroy(obstacleToRemove);
     }
   }

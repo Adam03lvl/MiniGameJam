@@ -12,10 +12,10 @@ FBXHeaderExtension:  {
 		Year: 2026
 		Month: 3
 		Day: 1
-		Hour: 14
-		Minute: 1
-		Second: 23
-		Millisecond: 785
+		Hour: 23
+		Minute: 32
+		Second: 44
+		Millisecond: 487
 	}
 	Creator: "Blockbench 5.0.7"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -49,7 +49,7 @@ FBXHeaderExtension:  {
 	}
 }
 FileId: "iVFoobar"
-CreationTime: "2026-03-01 13:01:23:785"
+CreationTime: "2026-03-01 22:32:44:487"
 Creator: "Made with Blockbench"
 GlobalSettings:  {
 	Version: 1000
@@ -78,7 +78,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 610720130 {
+	Document: 55602201 {
 		Scene: "Scene"
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
@@ -98,12 +98,12 @@ References:
 
 Definitions:  {
 	Version: 100
-	Count: 59
+	Count: 216
 	ObjectType: "GlobalSettings" {
 		Count: 1
 	}
 	ObjectType: "Model" {
-		Count: 29
+		Count: 34
 		PropertyTemplate: "FbxNode" {
 			Properties70:  {
 				P: "QuaternionInterpolate", "enum", "", "",0
@@ -262,13 +262,52 @@ Definitions:  {
 			}
 		}
 	}
+	ObjectType: "AnimationStack" {
+		Count: 2
+		PropertyTemplate: "FbxAnimStack" {
+			Properties70:  {
+				P: "Description", "KString", "", "", ""
+				P: "LocalStart", "KTime", "Time", "",0
+				P: "LocalStop", "KTime", "Time", "",0
+				P: "ReferenceStart", "KTime", "Time", "",0
+				P: "ReferenceStop", "KTime", "Time", "",0
+			}
+		}
+	}
+	ObjectType: "AnimationLayer" {
+		Count: 2
+		PropertyTemplate: "FbxAnimLayer" {
+			Properties70:  {
+				P: "Weight", "Number", "", "A",100
+				P: "Mute", "bool", "", "",0
+				P: "Solo", "bool", "", "",0
+				P: "Lock", "bool", "", "",0
+				P: "Color", "ColorRGB", "Color", "",0.8,0.8,0.8
+				P: "BlendMode", "enum", "", "",0
+				P: "RotationAccumulationMode", "enum", "", "",0
+				P: "ScaleAccumulationMode", "enum", "", "",0
+				P: "BlendModeBypass", "ULongLong", "", "",0
+			}
+		}
+	}
+	ObjectType: "AnimationCurveNode" {
+		Count: 37
+		PropertyTemplate: "FbxAnimCurveNode" {
+			Properties70:  {
+				P: "d", "Compound", "", ""
+			}
+		}
+	}
+	ObjectType: "AnimationCurve" {
+		Count: 111
+	}
 }
 
 ; Object properties
 ;------------------------------------------------------------------
 
 Objects:  {
-	Model: 78555154, "Model::Fence", "Null" {
+	Model: 79561388, "Model::Fence", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -282,7 +321,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 76767061, "Model::Gate", "Null" {
+	Model: 78674443, "Model::Gate", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -296,7 +335,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 74320521, "Model::Nails", "Null" {
+	Model: 74406717, "Model::Nails", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -310,7 +349,77 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 77366406, "Model::Left arch lower", "Mesh" {
+	Model: 71808303, "Model::Upper beam", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0.78125,12.097248278353758,1.2011193965995302
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 79054346, "Model::Lower beam", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0.7812499999999999,9.062191078509473,1.2292338508388518
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 77954592, "Model::Gate beam", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0.78125,4.848408514871256,-0.203792164999958
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 72467610, "Model::Right fence", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,0,0
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 78692325, "Model::Left fence", "Null" {
+		Version: 232
+		Properties70:  {
+			P: "RotationActive", "bool", "", "",1
+			P: "InheritType", "enum", "", "",1
+			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,0,0
+			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
+			P: "Lcl Rotation", "Lcl Rotation", "", "A",0,0,0
+			P: "RotationOrder", "enum", "", "",0
+		}
+		Shading: Y
+		Culling: "CullingOff"
+	}
+	Model: 72734149, "Model::Left arch lower", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -325,7 +434,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 70843000, "Geometry::Left arch lower", "Mesh" {
+	Geometry: 78186304, "Geometry::Left arch lower", "Mesh" {
 		Vertices: *24 {
 			a: 1.565625,6.565625,1.565625,1.565625,6.565625,-0.003124999999999656,1.565625,-0.003124999999999656,1.565625,1.565625,-0.003124999999999656,-0.003124999999999656,-0.0031250000000000028,6.565625,-0.003124999999999656,-0.0031250000000000028,6.565625,1.565625,-0.0031250000000000028,-0.003124999999999656,-0.003124999999999656,-0.0031250000000000028,-0.003124999999999656,1.565625
 		}
@@ -376,7 +485,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 71580603, "Model::Right arch lower", "Mesh" {
+	Model: 75811639, "Model::Right arch lower", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -391,7 +500,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 73074591, "Geometry::Right arch lower", "Mesh" {
+	Geometry: 71696568, "Geometry::Right arch lower", "Mesh" {
 		Vertices: *24 {
 			a: 1.5625,6.5625,1.5624999999999971,1.5625,6.5625,0,1.5625,0,1.5624999999999971,1.5625,0,0,0,6.5625,0,0,6.5625,1.5624999999999971,0,0,0,0,0,1.5624999999999971
 		}
@@ -442,7 +551,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 70794247, "Model::Right base", "Mesh" {
+	Model: 72749374, "Model::Right base", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -457,7 +566,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 78439046, "Geometry::Right base", "Mesh" {
+	Geometry: 71985279, "Geometry::Right base", "Mesh" {
 		Vertices: *24 {
 			a: 1.7203125,1.5640624999999997,1.7203124999999917,1.7203125,1.5640624999999997,-0.15781249999999997,1.7203125,-0.0015625000000000014,1.7203124999999917,1.7203125,-0.0015625000000000014,-0.15781249999999997,-0.15781250000000013,1.5640624999999997,-0.15781249999999997,-0.15781250000000013,1.5640624999999997,1.7203124999999917,-0.15781250000000013,-0.0015625000000000014,-0.15781249999999997,-0.15781250000000013,-0.0015625000000000014,1.7203124999999917
 		}
@@ -508,7 +617,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 74958501, "Model::Left base", "Mesh" {
+	Model: 76710314, "Model::Left base", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -523,7 +632,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 75751749, "Geometry::Left base", "Mesh" {
+	Geometry: 79823263, "Geometry::Left base", "Mesh" {
 		Vertices: *24 {
 			a: 1.71875,1.5625,1.71875,1.71875,1.5625,-0.15625000000000014,1.71875,0,1.71875,1.71875,0,-0.15625000000000014,-0.15625000000000014,1.5625,-0.15625000000000014,-0.15625000000000014,1.5625,1.71875,-0.15625000000000014,0,-0.15625000000000014,-0.15625000000000014,0,1.71875
 		}
@@ -574,7 +683,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 79037568, "Model::Left arch higher", "Mesh" {
+	Model: 78318727, "Model::Left arch higher", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -589,7 +698,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 74534260, "Geometry::Left arch higher", "Mesh" {
+	Geometry: 73756274, "Geometry::Left arch higher", "Mesh" {
 		Vertices: *24 {
 			a: 1.40625,8.593749999999986,1.4062499999999998,1.40625,8.593749999999986,0.15625000000000014,1.40625,-0.15624999999999944,1.4062499999999998,1.40625,-0.15624999999999944,0.15625000000000014,0.15624999999999997,8.593749999999986,0.15625000000000014,0.15624999999999997,8.593749999999986,1.4062499999999998,0.15624999999999997,-0.15624999999999944,0.15625000000000014,0.15624999999999997,-0.15624999999999944,1.4062499999999998
 		}
@@ -640,7 +749,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 72030667, "Model::Right arch higher", "Mesh" {
+	Model: 78465122, "Model::Right arch higher", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -655,7 +764,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71927007, "Geometry::Right arch higher", "Mesh" {
+	Geometry: 72054064, "Geometry::Right arch higher", "Mesh" {
 		Vertices: *24 {
 			a: 1.40625,8.593749999999986,1.4062499999999978,1.40625,8.593749999999986,0.15625000000000153,1.40625,-0.15624999999999944,1.4062499999999978,1.40625,-0.15624999999999944,0.15625000000000153,0.15624999999999997,8.593749999999986,0.15625000000000153,0.15624999999999997,8.593749999999986,1.4062499999999978,0.15624999999999997,-0.15624999999999944,0.15625000000000153,0.15624999999999997,-0.15624999999999944,1.4062499999999978
 		}
@@ -706,13 +815,13 @@ Objects:  {
 			}
 		}
 	}
-	Model: 72593002, "Model::Lower beam", "Mesh" {
+	Model: 73446531, "Model::Lower beam_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "Lcl Translation", "Lcl Translation", "", "A",0,9.218749999999995,-3.906249999999999
+			P: "Lcl Translation", "Lcl Translation", "", "A",-0.7812499999999999,0.15655892149052109,-5.135483850838851
 			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",83,0,0
 			P: "RotationOrder", "enum", "", "",0
@@ -721,7 +830,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 73070302, "Geometry::Lower beam", "Mesh" {
+	Geometry: 77731455, "Geometry::Lower beam_1", "Mesh" {
 		Vertices: *24 {
 			a: 1.09375,12.187499999999984,1.4062499999999998,1.09375,12.187499999999984,0.15625000000000014,1.09375,-2.031250000000001,1.4062499999999998,1.09375,-2.031250000000001,0.15625000000000014,0.4687499999999999,12.187499999999984,0.15625000000000014,0.4687499999999999,12.187499999999984,1.4062499999999998,0.4687499999999999,-2.031250000000001,0.15625000000000014,0.4687499999999999,-2.031250000000001,1.4062499999999998
 		}
@@ -772,13 +881,13 @@ Objects:  {
 			}
 		}
 	}
-	Model: 78429665, "Model::Upper beam", "Mesh" {
+	Model: 73514676, "Model::Upper beam_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "Lcl Translation", "Lcl Translation", "", "A",0.78125,12.035908514871254,-0.203792164999958
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,-0.06133976348250414,-1.404911561599488
 			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",87.5,0,0
 			P: "RotationOrder", "enum", "", "",0
@@ -787,7 +896,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71050784, "Geometry::Upper beam", "Mesh" {
+	Geometry: 70113604, "Geometry::Upper beam_1", "Mesh" {
 		Vertices: *24 {
 			a: 0.3125000000000001,8.515624999999991,0.6249999999999991,0.3125000000000001,8.515624999999991,-0.6250000000000006,0.3125000000000001,-5.703124999999988,0.6249999999999991,0.3125000000000001,-5.703124999999988,-0.6250000000000006,-0.3125000000000001,8.515624999999991,-0.6250000000000006,-0.3125000000000001,8.515624999999991,0.6249999999999991,-0.3125000000000001,-5.703124999999988,-0.6250000000000006,-0.3125000000000001,-5.703124999999988,0.6249999999999991
 		}
@@ -838,13 +947,13 @@ Objects:  {
 			}
 		}
 	}
-	Model: 77573296, "Model::Gate beam", "Mesh" {
+	Model: 76571018, "Model::Gate beam_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
-			P: "Lcl Translation", "Lcl Translation", "", "A",0.78125,4.848408514871256,-0.203792164999958
+			P: "Lcl Translation", "Lcl Translation", "", "A",0,0,0
 			P: "RotationPivot", "Vector3D", "Vector", "",0,0,0
 			P: "Lcl Rotation", "Lcl Rotation", "", "A",87.5,0,0
 			P: "RotationOrder", "enum", "", "",0
@@ -853,7 +962,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 77759501, "Geometry::Gate beam", "Mesh" {
+	Geometry: 76113443, "Geometry::Gate beam_1", "Mesh" {
 		Vertices: *24 {
 			a: 0.3125000000000001,8.671874999999984,0.6249999999999991,0.3125000000000001,8.671874999999984,-0.6250000000000006,0.3125000000000001,-5.7031249999999885,0.6249999999999991,0.3125000000000001,-5.7031249999999885,-0.6250000000000006,-0.3125000000000001,8.671874999999984,-0.6250000000000006,-0.3125000000000001,8.671874999999984,0.6249999999999991,-0.3125000000000001,-5.7031249999999885,-0.6250000000000006,-0.3125000000000001,-5.7031249999999885,0.6249999999999991
 		}
@@ -904,7 +1013,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 77003979, "Model::Gate_1", "Mesh" {
+	Model: 74554650, "Model::Gate_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -919,7 +1028,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 70749357, "Geometry::Gate_1", "Mesh" {
+	Geometry: 75388706, "Geometry::Gate_1", "Mesh" {
 		Vertices: *24 {
 			a: 0.3125000000000001,7.421874999999991,2.968749999999999,0.3125000000000001,7.421874999999991,-6.938893903907228e-16,0.3125000000000001,-4.2968749999999885,2.968749999999999,0.3125000000000001,-4.2968749999999885,-6.938893903907228e-16,-0.3125000000000001,7.421874999999991,-6.938893903907228e-16,-0.3125000000000001,7.421874999999991,2.968749999999999,-0.3125000000000001,-4.2968749999999885,-6.938893903907228e-16,-0.3125000000000001,-4.2968749999999885,2.968749999999999
 		}
@@ -970,7 +1079,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 72117918, "Model::Gate beam_1", "Mesh" {
+	Model: 77879550, "Model::Gate beam_2", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -985,7 +1094,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 78144229, "Geometry::Gate beam_1", "Mesh" {
+	Geometry: 70097639, "Geometry::Gate beam_2", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999986,0.46875000000000006,4.921874999999982,0.15624999999999944,0.46875000000000006,1.7968750000000109,0.7812499999999986,0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.7812499999999986,-0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,1.7968750000000109,0.7812499999999986
 		}
@@ -1036,7 +1145,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 74769248, "Model::Gate beam_2", "Mesh" {
+	Model: 77651552, "Model::Gate beam_3", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1051,7 +1160,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 78372914, "Geometry::Gate beam_2", "Mesh" {
+	Geometry: 73387623, "Geometry::Gate beam_3", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999986,0.46875000000000006,4.921874999999982,0.15624999999999944,0.46875000000000006,1.7968750000000109,0.7812499999999986,0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.7812499999999986,-0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,1.7968750000000109,0.7812499999999986
 		}
@@ -1102,7 +1211,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 77930342, "Model::Gate beam_3", "Mesh" {
+	Model: 72593407, "Model::Gate beam_4", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1117,7 +1226,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71850535, "Geometry::Gate beam_3", "Mesh" {
+	Geometry: 77158070, "Geometry::Gate beam_4", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999991,0.46875000000000006,4.921874999999982,0.1562499999999996,0.46875000000000006,1.7968750000000109,0.7812499999999991,0.46875000000000006,1.7968750000000109,0.1562499999999996,-0.46875000000000006,4.921874999999982,0.1562499999999996,-0.46875000000000006,4.921874999999982,0.7812499999999991,-0.46875000000000006,1.7968750000000109,0.1562499999999996,-0.46875000000000006,1.7968750000000109,0.7812499999999991
 		}
@@ -1168,7 +1277,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 79948893, "Model::Gate beam_4", "Mesh" {
+	Model: 74026494, "Model::Gate beam_5", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1183,7 +1292,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 78999374, "Geometry::Gate beam_4", "Mesh" {
+	Geometry: 75308992, "Geometry::Gate beam_5", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999984,0.46875000000000006,4.921874999999982,0.15624999999999928,0.46875000000000006,1.7968750000000109,0.7812499999999984,0.46875000000000006,1.7968750000000109,0.15624999999999928,-0.46875000000000006,4.921874999999982,0.15624999999999928,-0.46875000000000006,4.921874999999982,0.7812499999999984,-0.46875000000000006,1.7968750000000109,0.15624999999999928,-0.46875000000000006,1.7968750000000109,0.7812499999999984
 		}
@@ -1234,7 +1343,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 70453280, "Model::Gate beam_5", "Mesh" {
+	Model: 79455364, "Model::Gate beam_6", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1249,7 +1358,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 79269909, "Geometry::Gate beam_5", "Mesh" {
+	Geometry: 70948697, "Geometry::Gate beam_6", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999991,0.46875000000000006,4.921874999999982,0.1562499999999996,0.46875000000000006,1.7968750000000109,0.7812499999999991,0.46875000000000006,1.7968750000000109,0.1562499999999996,-0.46875000000000006,4.921874999999982,0.1562499999999996,-0.46875000000000006,4.921874999999982,0.7812499999999991,-0.46875000000000006,1.7968750000000109,0.1562499999999996,-0.46875000000000006,1.7968750000000109,0.7812499999999991
 		}
@@ -1300,7 +1409,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 78694365, "Model::Gate beam_6", "Mesh" {
+	Model: 79413932, "Model::Gate beam_7", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1315,7 +1424,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 73195978, "Geometry::Gate beam_6", "Mesh" {
+	Geometry: 77516131, "Geometry::Gate beam_7", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999989,0.46875000000000006,4.921874999999982,0.15624999999999978,0.46875000000000006,1.7968750000000109,0.7812499999999989,0.46875000000000006,1.7968750000000109,0.15624999999999978,-0.46875000000000006,4.921874999999982,0.15624999999999978,-0.46875000000000006,4.921874999999982,0.7812499999999989,-0.46875000000000006,1.7968750000000109,0.15624999999999978,-0.46875000000000006,1.7968750000000109,0.7812499999999989
 		}
@@ -1366,7 +1475,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 74649608, "Model::Gate beam_7", "Mesh" {
+	Model: 75180569, "Model::Gate beam_8", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1381,7 +1490,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 75886514, "Geometry::Gate beam_7", "Mesh" {
+	Geometry: 75579679, "Geometry::Gate beam_8", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999989,0.46875000000000006,4.921874999999982,0.15624999999999875,0.46875000000000006,1.7968750000000109,0.7812499999999989,0.46875000000000006,1.7968750000000109,0.15624999999999875,-0.46875000000000006,4.921874999999982,0.15624999999999875,-0.46875000000000006,4.921874999999982,0.7812499999999989,-0.46875000000000006,1.7968750000000109,0.15624999999999875,-0.46875000000000006,1.7968750000000109,0.7812499999999989
 		}
@@ -1432,7 +1541,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 73404154, "Model::Gate beam_8", "Mesh" {
+	Model: 79833217, "Model::Gate beam_9", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1447,7 +1556,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 72678463, "Geometry::Gate beam_8", "Mesh" {
+	Geometry: 70131563, "Geometry::Gate beam_9", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999986,0.46875000000000006,4.921874999999982,0.15624999999999944,0.46875000000000006,1.7968750000000109,0.7812499999999986,0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.7812499999999986,-0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,1.7968750000000109,0.7812499999999986
 		}
@@ -1498,7 +1607,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 70517661, "Model::Nail", "Mesh" {
+	Model: 76742592, "Model::Nail", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1513,7 +1622,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 75271135, "Geometry::Nail", "Mesh" {
+	Geometry: 71733727, "Geometry::Nail", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.4218749999999822,0.46874999999999695,0.9375000000000001,2.4218749999999822,0.15624999999999806,0.9375000000000001,2.109375000000011,0.46874999999999695,0.9375000000000001,2.109375000000011,0.15624999999999806,-0.9375,2.4218749999999822,0.15624999999999806,-0.9375,2.4218749999999822,0.46874999999999695,-0.9375,2.109375000000011,0.15624999999999806,-0.9375,2.109375000000011,0.46874999999999695
 		}
@@ -1564,7 +1673,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 79942991, "Model::Nail_1", "Mesh" {
+	Model: 78858416, "Model::Nail_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1579,7 +1688,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 74596843, "Geometry::Nail_1", "Mesh" {
+	Geometry: 77274423, "Geometry::Nail_1", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.4218749999999822,0.46874999999999833,0.9375000000000001,2.4218749999999822,0.15624999999999944,0.9375000000000001,2.109375000000011,0.46874999999999833,0.9375000000000001,2.109375000000011,0.15624999999999944,-0.9375,2.4218749999999822,0.15624999999999944,-0.9375,2.4218749999999822,0.46874999999999833,-0.9375,2.109375000000011,0.15624999999999944,-0.9375,2.109375000000011,0.46874999999999833
 		}
@@ -1630,7 +1739,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 78723827, "Model::Nail_2", "Mesh" {
+	Model: 77741207, "Model::Nail_2", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1645,7 +1754,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 79343111, "Geometry::Nail_2", "Mesh" {
+	Geometry: 76893339, "Geometry::Nail_2", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.4218749999999822,0.46874999999999833,0.9375000000000001,2.4218749999999822,0.15624999999999944,0.9375000000000001,2.109375000000011,0.46874999999999833,0.9375000000000001,2.109375000000011,0.15624999999999944,-0.9375,2.4218749999999822,0.15624999999999944,-0.9375,2.4218749999999822,0.46874999999999833,-0.9375,2.109375000000011,0.15624999999999944,-0.9375,2.109375000000011,0.46874999999999833
 		}
@@ -1696,7 +1805,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 70874573, "Model::Nail_3", "Mesh" {
+	Model: 77953359, "Model::Nail_3", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1711,7 +1820,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 74850778, "Geometry::Nail_3", "Mesh" {
+	Geometry: 74317966, "Geometry::Nail_3", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.421874999999976,0.46874999999999556,0.9375000000000001,2.421874999999976,0.15624999999999944,0.9375000000000001,2.109375000000005,0.46874999999999556,0.9375000000000001,2.109375000000005,0.15624999999999944,-0.9375,2.421874999999976,0.15624999999999944,-0.9375,2.421874999999976,0.46874999999999556,-0.9375,2.109375000000005,0.15624999999999944,-0.9375,2.109375000000005,0.46874999999999556
 		}
@@ -1762,7 +1871,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 70689091, "Model::Nail_4", "Mesh" {
+	Model: 77245590, "Model::Nail_4", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1777,7 +1886,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 75558207, "Geometry::Nail_4", "Mesh" {
+	Geometry: 74882657, "Geometry::Nail_4", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.421874999999976,0.46874999999999556,0.9375000000000001,2.421874999999976,0.15624999999999944,0.9375000000000001,2.109375000000005,0.46874999999999556,0.9375000000000001,2.109375000000005,0.15624999999999944,-0.9375,2.421874999999976,0.15624999999999944,-0.9375,2.421874999999976,0.46874999999999556,-0.9375,2.109375000000005,0.15624999999999944,-0.9375,2.109375000000005,0.46874999999999556
 		}
@@ -1828,7 +1937,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 72037903, "Model::Nail_5", "Mesh" {
+	Model: 72037146, "Model::Nail_5", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1843,7 +1952,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 70920094, "Geometry::Nail_5", "Mesh" {
+	Geometry: 71094888, "Geometry::Nail_5", "Mesh" {
 		Vertices: *24 {
 			a: 0.9375000000000001,2.421874999999976,0.46874999999999833,0.9375000000000001,2.421874999999976,0.15624999999999944,0.9375000000000001,2.109375000000005,0.46874999999999833,0.9375000000000001,2.109375000000005,0.15624999999999944,-0.9375,2.421874999999976,0.15624999999999944,-0.9375,2.421874999999976,0.46874999999999833,-0.9375,2.109375000000005,0.15624999999999944,-0.9375,2.109375000000005,0.46874999999999833
 		}
@@ -1894,7 +2003,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 77752550, "Model::Gate beam_9", "Mesh" {
+	Model: 76283641, "Model::Gate beam_10", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1909,7 +2018,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 74598492, "Geometry::Gate beam_9", "Mesh" {
+	Geometry: 74964189, "Geometry::Gate beam_10", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999986,0.46875000000000006,4.921874999999982,0.15624999999999944,0.46875000000000006,1.7968750000000109,0.7812499999999986,0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.7812499999999986,-0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,1.7968750000000109,0.7812499999999986
 		}
@@ -1960,7 +2069,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 76685114, "Model::Gate beam_10", "Mesh" {
+	Model: 77653421, "Model::Gate beam_11", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1975,7 +2084,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71335575, "Geometry::Gate beam_10", "Mesh" {
+	Geometry: 78785373, "Geometry::Gate beam_11", "Mesh" {
 		Vertices: *24 {
 			a: 0.46875000000000006,4.921874999999982,0.7812499999999986,0.46875000000000006,4.921874999999982,0.15624999999999944,0.46875000000000006,1.7968750000000109,0.7812499999999986,0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.15624999999999944,-0.46875000000000006,4.921874999999982,0.7812499999999986,-0.46875000000000006,1.7968750000000109,0.15624999999999944,-0.46875000000000006,1.7968750000000109,0.7812499999999986
 		}
@@ -2026,7 +2135,7 @@ Objects:  {
 			}
 		}
 	}
-	Material: 71834771, "Material::Fence.png", "" {
+	Material: 79893707, "Material::Fence.png", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -2037,7 +2146,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Texture: 73054971, "Texture::Fence.png", "" {
+	Texture: 78086606, "Texture::Fence.png", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::Fence.png"
@@ -2049,7 +2158,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Video: 75867525, "Video::Fence.png", "Clip" {
+	Video: 79085945, "Video::Fence.png", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:\Users\nikam\Art\Blockbech\Fence.png"
@@ -2059,6 +2168,2390 @@ Objects:  {
 		RelativeFilename: "Fence.png"
 		Content: "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"
 	}
+	AnimationStack: 71940244, "AnimStack::Fall apart", "" {
+		Properties70:  {
+			P: "LocalStop", "KTime", "Time", "",98145585750
+			P: "ReferenceStop", "KTime", "Time", "",98145585750
+		}
+	}
+	AnimationLayer: 74547662, "AnimLayer::Fall apart", "" {
+	}
+	AnimationCurveNode: 77513510, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 74555138, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 75904395, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 74775383, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 74242673, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72003812, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 76459501, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77950586, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 40412889088
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 73019867, "AnimCurveNode::Fall apart.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 70946722, "AnimCurve::Fall apart.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 40412889088,42337312768
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 75046366, "AnimCurve::Fall apart.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 40412889088,42337312768
+		}
+		KeyValueFloat: *2 {
+			a: 1,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 77138896, "AnimCurve::Fall apart.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 40412889088,42337312768
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 76861961, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79065949, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 0,-10,-1,1.5,-0.00193555757869035
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 77526581, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,0.673639178276062
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 77799350, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,-90.01516723632812
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurveNode: 74318613, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 71766082, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 0.78125,0.78125,0.78125,0.78125,4.375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 72175707, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 12.097248077392578,11.159748077392578,10.222248077392578,8.659748077392578,0.37849828600883484
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 76019384, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,19244232704,30790772736,40412889088,63505969152
+		}
+		KeyValueFloat: *5 {
+			a: 1.2011194229125977,1.2011194229125977,1.2011194229125977,1.2011194229125977,1.2011194229125977
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurveNode: 71143780, "AnimCurveNode::Fall apart.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 76882654, "AnimCurve::Fall apart.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77418388, "AnimCurve::Fall apart.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 71729461, "AnimCurve::Fall apart.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 74748212, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 71425598, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,5.5,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 78996847, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,0.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 79182848, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,-90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurveNode: 70686721, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 71437690, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 0.78125,0.78125,0.78125,3.28125
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 74716562, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 9.062191009521484,9.062191009521484,7.343441009521484,1.093441128730774
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 74534176, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,19244232704,40412889088,63505969152
+		}
+		KeyValueFloat: *4 {
+			a: 1.2292338609695435,1.2292338609695435,1.2292338609695435,1.2292338609695435
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurveNode: 71812808, "AnimCurveNode::Fall apart.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79003766, "AnimCurve::Fall apart.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 72602189, "AnimCurve::Fall apart.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77013497, "AnimCurve::Fall apart.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 74067998, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 76158700, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 70943104, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 79140713, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,-90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 72531896, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72336621, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: 0.78125,0.78125,2.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 77631862, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: 4.8484086990356445,4.8484086990356445,0.3171585202217102
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 76924344, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,63505969152
+		}
+		KeyValueFloat: *3 {
+			a: -0.20379216969013214,-0.20379216969013214,-0.20379216969013214
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 77390531, "AnimCurveNode::Fall apart.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 76999241, "AnimCurve::Fall apart.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,40412889088
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 73801262, "AnimCurve::Fall apart.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,40412889088
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 77230935, "AnimCurve::Fall apart.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,40412889088
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 78540485, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 74529112, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,-90,-87.5,-89.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 74016712, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 72417194, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurveNode: 78014680, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 76426742, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 74901932, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,4.6875
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 77199690, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,-4.6875
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 78803659, "AnimCurveNode::Fall apart.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 73600348, "AnimCurve::Fall apart.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,90,85,90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 77231041, "AnimCurve::Fall apart.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurve: 72584258, "AnimCurve::Fall apart.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *5 {
+			a: 0,40412889088,73128083456,78901354496,82750201856
+		}
+		KeyValueFloat: *5 {
+			a: 0,0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 5
+		}
+	}
+	AnimationCurveNode: 71442333, "AnimCurveNode::Fall apart.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 75565767, "AnimCurve::Fall apart.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 70602691, "AnimCurve::Fall apart.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,7.34375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 73388915, "AnimCurve::Fall apart.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,40412889088,73128083456
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,7.34375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationStack: 74056598, "AnimStack::break through", "" {
+		Properties70:  {
+			P: "LocalStop", "KTime", "Time", "",55808274250
+			P: "ReferenceStop", "KTime", "Time", "",55808274250
+		}
+	}
+	AnimationLayer: 76946918, "AnimLayer::break through", "" {
+	}
+	AnimationCurveNode: 74202934, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72958924, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77847576, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 76439020, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 78501296, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 75055100, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 73153754, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 72400710, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 75188221, "AnimCurveNode::break through.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79485793, "AnimCurve::break through.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 70251851, "AnimCurve::break through.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 72234591, "AnimCurve::break through.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 79458679, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79825532, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 73158864, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77612505, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 77441783, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72281918, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 71605348, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 73687392, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 78217428, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 78238229, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 73617753, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 78080151, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 71572394, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72211104, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 73805805, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77245927, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 73585281, "AnimCurveNode::break through.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 70942460, "AnimCurve::break through.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,1924423296
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 71027250, "AnimCurve::break through.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,1924423296
+		}
+		KeyValueFloat: *2 {
+			a: 1,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 75657891, "AnimCurve::break through.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,1924423296
+		}
+		KeyValueFloat: *2 {
+			a: 1,1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 78937255, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79885728, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 71586976, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 76863681, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,-54.5,-90.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 79358711, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 72486535, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0.78125,9.375,12.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 74066819, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 12.097248077392578,8.347248077392578,0.5347482562065125
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 70936065, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 1.2011194229125977,1.2011194229125977,1.2011194229125977
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 76879315, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 77610296, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,4.730491638183594
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 71652604, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0.27515605092048645
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 79677629, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,-30,-90.28550720214844
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 76319873, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 78409123, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0.78125,6.25,8.4375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 70620477, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 9.062191009521484,8.124691009521484,0.31219106912612915
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 76580613, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 1.2292338609695435,1.2292338609695435,1.2292338609695435
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 73770968, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 74019894, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 71112909, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 76261055, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0,-43,-92
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 71905396, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 70775413, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 0.78125,5.3125,5.3125
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 79324755, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: 4.8484086990356445,4.8484086990356445,0.3171585202217102
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurve: 76863285, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *3 {
+			a: 0,9622116352,17319809024
+		}
+		KeyValueFloat: *3 {
+			a: -0.20379216969013214,-0.20379216969013214,-0.20379216969013214
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 3
+		}
+	}
+	AnimationCurveNode: 78603377, "AnimCurveNode::break through.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 77956726, "AnimCurve::break through.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 77468281, "AnimCurve::break through.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 75767313, "AnimCurve::break through.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 70161369, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 70878753, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,90,85,90
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 70077626, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 74864866, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurveNode: 72284590, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 74167948, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 74821000, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,7.34375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 73380532, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,7.34375
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 73212413, "AnimCurveNode::break through.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 79896343, "AnimCurve::break through.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 71466869, "AnimCurve::break through.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 71889282, "AnimCurve::break through.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurveNode: 74762484, "AnimCurveNode::break through.R", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 76215092, "AnimCurve::break through.RX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,-90,-87.5,-89.5
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 75065258, "AnimCurve::break through.RY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurve: 75793441, "AnimCurve::break through.RZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *4 {
+			a: 0,46186156032,51959427072,55808274432
+		}
+		KeyValueFloat: *4 {
+			a: 0,0,0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 4
+		}
+	}
+	AnimationCurveNode: 79826195, "AnimCurveNode::break through.P", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 71375644, "AnimCurve::break through.PX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,0
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 73233350, "AnimCurve::break through.PY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,4.6875
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurve: 72692657, "AnimCurve::break through.PZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *2 {
+			a: 0,46186156032
+		}
+		KeyValueFloat: *2 {
+			a: 0,-4.6875
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 2
+		}
+	}
+	AnimationCurveNode: 71755263, "AnimCurveNode::break through.S", "" {
+		Properties70:  {
+			P: "d|X", "Number", "", "A",1
+			P: "d|Y", "Number", "", "A",1
+			P: "d|Z", "Number", "", "A",1
+		}
+	}
+	AnimationCurve: 73870865, "AnimCurve::break through.SX", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 74206499, "AnimCurve::break through.SY", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
+	AnimationCurve: 71779016, "AnimCurve::break through.SZ", "" {
+		Default: 0
+		KeyVer: 4008
+		KeyTime: *1 {
+			a: 0
+		}
+		KeyValueFloat: *1 {
+			a: 1
+		}
+		KeyAttrFlags: *1 {
+			a: 24836
+		}
+		KeyAttrDataFloat: *4 {
+			a: 0,0,255790911,0
+		}
+		KeyAttrRefCount: *1 {
+			a: 1
+		}
+	}
 }
 
 ; Object connections
@@ -2067,253 +4560,829 @@ Objects:  {
 Connections:  {
 
 	;Model::Fence, Model::RootNode
-	C: "OO",78555154,0
+	C: "OO",79561388,0
 
 	;Model::Gate, Model::Fence
-	C: "OO",76767061,78555154
+	C: "OO",78674443,79561388
 
-	;Model::Nails, Model::Gate
-	C: "OO",74320521,76767061
-
-	;Model::Left arch lower, Model::Fence
-	C: "OO",77366406,78555154
-
-	;Geometry::Left arch lower, Model::Left arch lower
-	C: "OO",70843000,77366406
-
-	;Material::Fence.png, Model::Left arch lower
-	C: "OO",71834771,77366406
-
-	;Model::Right arch lower, Model::Fence
-	C: "OO",71580603,78555154
-
-	;Geometry::Right arch lower, Model::Right arch lower
-	C: "OO",73074591,71580603
-
-	;Material::Fence.png, Model::Right arch lower
-	C: "OO",71834771,71580603
-
-	;Model::Right base, Model::Fence
-	C: "OO",70794247,78555154
-
-	;Geometry::Right base, Model::Right base
-	C: "OO",78439046,70794247
-
-	;Material::Fence.png, Model::Right base
-	C: "OO",71834771,70794247
-
-	;Model::Left base, Model::Fence
-	C: "OO",74958501,78555154
-
-	;Geometry::Left base, Model::Left base
-	C: "OO",75751749,74958501
-
-	;Material::Fence.png, Model::Left base
-	C: "OO",71834771,74958501
-
-	;Model::Left arch higher, Model::Fence
-	C: "OO",79037568,78555154
-
-	;Geometry::Left arch higher, Model::Left arch higher
-	C: "OO",74534260,79037568
-
-	;Material::Fence.png, Model::Left arch higher
-	C: "OO",71834771,79037568
-
-	;Model::Right arch higher, Model::Fence
-	C: "OO",72030667,78555154
-
-	;Geometry::Right arch higher, Model::Right arch higher
-	C: "OO",71927007,72030667
-
-	;Material::Fence.png, Model::Right arch higher
-	C: "OO",71834771,72030667
-
-	;Model::Lower beam, Model::Fence
-	C: "OO",72593002,78555154
-
-	;Geometry::Lower beam, Model::Lower beam
-	C: "OO",73070302,72593002
-
-	;Material::Fence.png, Model::Lower beam
-	C: "OO",71834771,72593002
+	;Model::Nails, Model::Fence
+	C: "OO",74406717,79561388
 
 	;Model::Upper beam, Model::Fence
-	C: "OO",78429665,78555154
+	C: "OO",71808303,79561388
 
-	;Geometry::Upper beam, Model::Upper beam
-	C: "OO",71050784,78429665
-
-	;Material::Fence.png, Model::Upper beam
-	C: "OO",71834771,78429665
+	;Model::Lower beam, Model::Fence
+	C: "OO",79054346,79561388
 
 	;Model::Gate beam, Model::Gate
-	C: "OO",77573296,76767061
+	C: "OO",77954592,78674443
 
-	;Geometry::Gate beam, Model::Gate beam
-	C: "OO",77759501,77573296
+	;Model::Right fence, Model::Fence
+	C: "OO",72467610,79561388
 
-	;Material::Fence.png, Model::Gate beam
-	C: "OO",71834771,77573296
+	;Model::Left fence, Model::Fence
+	C: "OO",78692325,79561388
 
-	;Model::Gate_1, Model::Gate
-	C: "OO",77003979,76767061
+	;Model::Left arch lower, Model::Left fence
+	C: "OO",72734149,78692325
 
-	;Geometry::Gate_1, Model::Gate_1
-	C: "OO",70749357,77003979
+	;Geometry::Left arch lower, Model::Left arch lower
+	C: "OO",78186304,72734149
 
-	;Material::Fence.png, Model::Gate_1
-	C: "OO",71834771,77003979
+	;Material::Fence.png, Model::Left arch lower
+	C: "OO",79893707,72734149
 
-	;Model::Gate beam_1, Model::Gate
-	C: "OO",72117918,76767061
+	;Model::Right arch lower, Model::Right fence
+	C: "OO",75811639,72467610
+
+	;Geometry::Right arch lower, Model::Right arch lower
+	C: "OO",71696568,75811639
+
+	;Material::Fence.png, Model::Right arch lower
+	C: "OO",79893707,75811639
+
+	;Model::Right base, Model::Right fence
+	C: "OO",72749374,72467610
+
+	;Geometry::Right base, Model::Right base
+	C: "OO",71985279,72749374
+
+	;Material::Fence.png, Model::Right base
+	C: "OO",79893707,72749374
+
+	;Model::Left base, Model::Left fence
+	C: "OO",76710314,78692325
+
+	;Geometry::Left base, Model::Left base
+	C: "OO",79823263,76710314
+
+	;Material::Fence.png, Model::Left base
+	C: "OO",79893707,76710314
+
+	;Model::Left arch higher, Model::Left fence
+	C: "OO",78318727,78692325
+
+	;Geometry::Left arch higher, Model::Left arch higher
+	C: "OO",73756274,78318727
+
+	;Material::Fence.png, Model::Left arch higher
+	C: "OO",79893707,78318727
+
+	;Model::Right arch higher, Model::Right fence
+	C: "OO",78465122,72467610
+
+	;Geometry::Right arch higher, Model::Right arch higher
+	C: "OO",72054064,78465122
+
+	;Material::Fence.png, Model::Right arch higher
+	C: "OO",79893707,78465122
+
+	;Model::Lower beam_1, Model::Lower beam
+	C: "OO",73446531,79054346
+
+	;Geometry::Lower beam_1, Model::Lower beam_1
+	C: "OO",77731455,73446531
+
+	;Material::Fence.png, Model::Lower beam_1
+	C: "OO",79893707,73446531
+
+	;Model::Upper beam_1, Model::Upper beam
+	C: "OO",73514676,71808303
+
+	;Geometry::Upper beam_1, Model::Upper beam_1
+	C: "OO",70113604,73514676
+
+	;Material::Fence.png, Model::Upper beam_1
+	C: "OO",79893707,73514676
+
+	;Model::Gate beam_1, Model::Gate beam
+	C: "OO",76571018,77954592
 
 	;Geometry::Gate beam_1, Model::Gate beam_1
-	C: "OO",78144229,72117918
+	C: "OO",76113443,76571018
 
 	;Material::Fence.png, Model::Gate beam_1
-	C: "OO",71834771,72117918
+	C: "OO",79893707,76571018
+
+	;Model::Gate_1, Model::Gate
+	C: "OO",74554650,78674443
+
+	;Geometry::Gate_1, Model::Gate_1
+	C: "OO",75388706,74554650
+
+	;Material::Fence.png, Model::Gate_1
+	C: "OO",79893707,74554650
 
 	;Model::Gate beam_2, Model::Gate
-	C: "OO",74769248,76767061
+	C: "OO",77879550,78674443
 
 	;Geometry::Gate beam_2, Model::Gate beam_2
-	C: "OO",78372914,74769248
+	C: "OO",70097639,77879550
 
 	;Material::Fence.png, Model::Gate beam_2
-	C: "OO",71834771,74769248
+	C: "OO",79893707,77879550
 
 	;Model::Gate beam_3, Model::Gate
-	C: "OO",77930342,76767061
+	C: "OO",77651552,78674443
 
 	;Geometry::Gate beam_3, Model::Gate beam_3
-	C: "OO",71850535,77930342
+	C: "OO",73387623,77651552
 
 	;Material::Fence.png, Model::Gate beam_3
-	C: "OO",71834771,77930342
+	C: "OO",79893707,77651552
 
 	;Model::Gate beam_4, Model::Gate
-	C: "OO",79948893,76767061
+	C: "OO",72593407,78674443
 
 	;Geometry::Gate beam_4, Model::Gate beam_4
-	C: "OO",78999374,79948893
+	C: "OO",77158070,72593407
 
 	;Material::Fence.png, Model::Gate beam_4
-	C: "OO",71834771,79948893
+	C: "OO",79893707,72593407
 
 	;Model::Gate beam_5, Model::Gate
-	C: "OO",70453280,76767061
+	C: "OO",74026494,78674443
 
 	;Geometry::Gate beam_5, Model::Gate beam_5
-	C: "OO",79269909,70453280
+	C: "OO",75308992,74026494
 
 	;Material::Fence.png, Model::Gate beam_5
-	C: "OO",71834771,70453280
+	C: "OO",79893707,74026494
 
 	;Model::Gate beam_6, Model::Gate
-	C: "OO",78694365,76767061
+	C: "OO",79455364,78674443
 
 	;Geometry::Gate beam_6, Model::Gate beam_6
-	C: "OO",73195978,78694365
+	C: "OO",70948697,79455364
 
 	;Material::Fence.png, Model::Gate beam_6
-	C: "OO",71834771,78694365
+	C: "OO",79893707,79455364
 
 	;Model::Gate beam_7, Model::Gate
-	C: "OO",74649608,76767061
+	C: "OO",79413932,78674443
 
 	;Geometry::Gate beam_7, Model::Gate beam_7
-	C: "OO",75886514,74649608
+	C: "OO",77516131,79413932
 
 	;Material::Fence.png, Model::Gate beam_7
-	C: "OO",71834771,74649608
+	C: "OO",79893707,79413932
 
 	;Model::Gate beam_8, Model::Gate
-	C: "OO",73404154,76767061
+	C: "OO",75180569,78674443
 
 	;Geometry::Gate beam_8, Model::Gate beam_8
-	C: "OO",72678463,73404154
+	C: "OO",75579679,75180569
 
 	;Material::Fence.png, Model::Gate beam_8
-	C: "OO",71834771,73404154
-
-	;Model::Nail, Model::Nails
-	C: "OO",70517661,74320521
-
-	;Geometry::Nail, Model::Nail
-	C: "OO",75271135,70517661
-
-	;Material::Fence.png, Model::Nail
-	C: "OO",71834771,70517661
-
-	;Model::Nail_1, Model::Nails
-	C: "OO",79942991,74320521
-
-	;Geometry::Nail_1, Model::Nail_1
-	C: "OO",74596843,79942991
-
-	;Material::Fence.png, Model::Nail_1
-	C: "OO",71834771,79942991
-
-	;Model::Nail_2, Model::Nails
-	C: "OO",78723827,74320521
-
-	;Geometry::Nail_2, Model::Nail_2
-	C: "OO",79343111,78723827
-
-	;Material::Fence.png, Model::Nail_2
-	C: "OO",71834771,78723827
-
-	;Model::Nail_3, Model::Nails
-	C: "OO",70874573,74320521
-
-	;Geometry::Nail_3, Model::Nail_3
-	C: "OO",74850778,70874573
-
-	;Material::Fence.png, Model::Nail_3
-	C: "OO",71834771,70874573
-
-	;Model::Nail_4, Model::Nails
-	C: "OO",70689091,74320521
-
-	;Geometry::Nail_4, Model::Nail_4
-	C: "OO",75558207,70689091
-
-	;Material::Fence.png, Model::Nail_4
-	C: "OO",71834771,70689091
-
-	;Model::Nail_5, Model::Nails
-	C: "OO",72037903,74320521
-
-	;Geometry::Nail_5, Model::Nail_5
-	C: "OO",70920094,72037903
-
-	;Material::Fence.png, Model::Nail_5
-	C: "OO",71834771,72037903
+	C: "OO",79893707,75180569
 
 	;Model::Gate beam_9, Model::Gate
-	C: "OO",77752550,76767061
+	C: "OO",79833217,78674443
 
 	;Geometry::Gate beam_9, Model::Gate beam_9
-	C: "OO",74598492,77752550
+	C: "OO",70131563,79833217
 
 	;Material::Fence.png, Model::Gate beam_9
-	C: "OO",71834771,77752550
+	C: "OO",79893707,79833217
+
+	;Model::Nail, Model::Nails
+	C: "OO",76742592,74406717
+
+	;Geometry::Nail, Model::Nail
+	C: "OO",71733727,76742592
+
+	;Material::Fence.png, Model::Nail
+	C: "OO",79893707,76742592
+
+	;Model::Nail_1, Model::Nails
+	C: "OO",78858416,74406717
+
+	;Geometry::Nail_1, Model::Nail_1
+	C: "OO",77274423,78858416
+
+	;Material::Fence.png, Model::Nail_1
+	C: "OO",79893707,78858416
+
+	;Model::Nail_2, Model::Nails
+	C: "OO",77741207,74406717
+
+	;Geometry::Nail_2, Model::Nail_2
+	C: "OO",76893339,77741207
+
+	;Material::Fence.png, Model::Nail_2
+	C: "OO",79893707,77741207
+
+	;Model::Nail_3, Model::Nails
+	C: "OO",77953359,74406717
+
+	;Geometry::Nail_3, Model::Nail_3
+	C: "OO",74317966,77953359
+
+	;Material::Fence.png, Model::Nail_3
+	C: "OO",79893707,77953359
+
+	;Model::Nail_4, Model::Nails
+	C: "OO",77245590,74406717
+
+	;Geometry::Nail_4, Model::Nail_4
+	C: "OO",74882657,77245590
+
+	;Material::Fence.png, Model::Nail_4
+	C: "OO",79893707,77245590
+
+	;Model::Nail_5, Model::Nails
+	C: "OO",72037146,74406717
+
+	;Geometry::Nail_5, Model::Nail_5
+	C: "OO",71094888,72037146
+
+	;Material::Fence.png, Model::Nail_5
+	C: "OO",79893707,72037146
 
 	;Model::Gate beam_10, Model::Gate
-	C: "OO",76685114,76767061
+	C: "OO",76283641,78674443
 
 	;Geometry::Gate beam_10, Model::Gate beam_10
-	C: "OO",71335575,76685114
+	C: "OO",74964189,76283641
 
 	;Material::Fence.png, Model::Gate beam_10
-	C: "OO",71834771,76685114
+	C: "OO",79893707,76283641
+
+	;Model::Gate beam_11, Model::Gate
+	C: "OO",77653421,78674443
+
+	;Geometry::Gate beam_11, Model::Gate beam_11
+	C: "OO",78785373,77653421
+
+	;Material::Fence.png, Model::Gate beam_11
+	C: "OO",79893707,77653421
 
 	;Texture::Fence.png, Material::Fence.png
-	C: "OP",73054971,71834771, "DiffuseColor"
+	C: "OP",78086606,79893707, "DiffuseColor"
 
 	;Video::Fence.png, Texture::Fence.png
-	C: "OO",75867525,73054971
+	C: "OO",79085945,78086606
+
+	;AnimLayer::Fall apart, AnimStack::Fall apart
+	C: "OO",74547662,71940244
+
+	;AnimCurveNode::Fall apart.R, Model::Nails
+	C: "OP",77513510,74406717, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",77513510,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",74555138,77513510, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",75904395,77513510, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",74775383,77513510, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Nails
+	C: "OP",74242673,74406717, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",74242673,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",72003812,74242673, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",76459501,74242673, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",77950586,74242673, "d|Z"
+
+	;AnimCurveNode::Fall apart.S, Model::Nails
+	C: "OP",73019867,74406717, "Lcl Scaling"
+
+	;AnimCurveNode::Fall apart.S, AnimLayer::Fall apart
+	C: "OO",73019867,74547662
+
+	;AnimCurve::Fall apart.SX, AnimCurveNode::Fall apart.S
+	C: "OP",70946722,73019867, "d|X"
+
+	;AnimCurve::Fall apart.SY, AnimCurveNode::Fall apart.S
+	C: "OP",75046366,73019867, "d|Y"
+
+	;AnimCurve::Fall apart.SZ, AnimCurveNode::Fall apart.S
+	C: "OP",77138896,73019867, "d|Z"
+
+	;AnimCurveNode::Fall apart.R, Model::Upper beam
+	C: "OP",76861961,71808303, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",76861961,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",79065949,76861961, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",77526581,76861961, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",77799350,76861961, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Upper beam
+	C: "OP",74318613,71808303, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",74318613,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",71766082,74318613, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",72175707,74318613, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",76019384,74318613, "d|Z"
+
+	;AnimCurveNode::Fall apart.S, Model::Upper beam
+	C: "OP",71143780,71808303, "Lcl Scaling"
+
+	;AnimCurveNode::Fall apart.S, AnimLayer::Fall apart
+	C: "OO",71143780,74547662
+
+	;AnimCurve::Fall apart.SX, AnimCurveNode::Fall apart.S
+	C: "OP",76882654,71143780, "d|X"
+
+	;AnimCurve::Fall apart.SY, AnimCurveNode::Fall apart.S
+	C: "OP",77418388,71143780, "d|Y"
+
+	;AnimCurve::Fall apart.SZ, AnimCurveNode::Fall apart.S
+	C: "OP",71729461,71143780, "d|Z"
+
+	;AnimCurveNode::Fall apart.R, Model::Lower beam
+	C: "OP",74748212,79054346, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",74748212,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",71425598,74748212, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",78996847,74748212, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",79182848,74748212, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Lower beam
+	C: "OP",70686721,79054346, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",70686721,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",71437690,70686721, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",74716562,70686721, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",74534176,70686721, "d|Z"
+
+	;AnimCurveNode::Fall apart.S, Model::Lower beam
+	C: "OP",71812808,79054346, "Lcl Scaling"
+
+	;AnimCurveNode::Fall apart.S, AnimLayer::Fall apart
+	C: "OO",71812808,74547662
+
+	;AnimCurve::Fall apart.SX, AnimCurveNode::Fall apart.S
+	C: "OP",79003766,71812808, "d|X"
+
+	;AnimCurve::Fall apart.SY, AnimCurveNode::Fall apart.S
+	C: "OP",72602189,71812808, "d|Y"
+
+	;AnimCurve::Fall apart.SZ, AnimCurveNode::Fall apart.S
+	C: "OP",77013497,71812808, "d|Z"
+
+	;AnimCurveNode::Fall apart.R, Model::Gate beam
+	C: "OP",74067998,77954592, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",74067998,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",76158700,74067998, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",70943104,74067998, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",79140713,74067998, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Gate beam
+	C: "OP",72531896,77954592, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",72531896,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",72336621,72531896, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",77631862,72531896, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",76924344,72531896, "d|Z"
+
+	;AnimCurveNode::Fall apart.S, Model::Gate beam
+	C: "OP",77390531,77954592, "Lcl Scaling"
+
+	;AnimCurveNode::Fall apart.S, AnimLayer::Fall apart
+	C: "OO",77390531,74547662
+
+	;AnimCurve::Fall apart.SX, AnimCurveNode::Fall apart.S
+	C: "OP",76999241,77390531, "d|X"
+
+	;AnimCurve::Fall apart.SY, AnimCurveNode::Fall apart.S
+	C: "OP",73801262,77390531, "d|Y"
+
+	;AnimCurve::Fall apart.SZ, AnimCurveNode::Fall apart.S
+	C: "OP",77230935,77390531, "d|Z"
+
+	;AnimCurveNode::Fall apart.R, Model::Left fence
+	C: "OP",78540485,78692325, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",78540485,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",74529112,78540485, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",74016712,78540485, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",72417194,78540485, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Left fence
+	C: "OP",78014680,78692325, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",78014680,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",76426742,78014680, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",74901932,78014680, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",77199690,78014680, "d|Z"
+
+	;AnimCurveNode::Fall apart.R, Model::Right fence
+	C: "OP",78803659,72467610, "Lcl Rotation"
+
+	;AnimCurveNode::Fall apart.R, AnimLayer::Fall apart
+	C: "OO",78803659,74547662
+
+	;AnimCurve::Fall apart.RX, AnimCurveNode::Fall apart.R
+	C: "OP",73600348,78803659, "d|X"
+
+	;AnimCurve::Fall apart.RY, AnimCurveNode::Fall apart.R
+	C: "OP",77231041,78803659, "d|Y"
+
+	;AnimCurve::Fall apart.RZ, AnimCurveNode::Fall apart.R
+	C: "OP",72584258,78803659, "d|Z"
+
+	;AnimCurveNode::Fall apart.P, Model::Right fence
+	C: "OP",71442333,72467610, "Lcl Translation"
+
+	;AnimCurveNode::Fall apart.P, AnimLayer::Fall apart
+	C: "OO",71442333,74547662
+
+	;AnimCurve::Fall apart.PX, AnimCurveNode::Fall apart.P
+	C: "OP",75565767,71442333, "d|X"
+
+	;AnimCurve::Fall apart.PY, AnimCurveNode::Fall apart.P
+	C: "OP",70602691,71442333, "d|Y"
+
+	;AnimCurve::Fall apart.PZ, AnimCurveNode::Fall apart.P
+	C: "OP",73388915,71442333, "d|Z"
+
+	;AnimLayer::break through, AnimStack::break through
+	C: "OO",76946918,74056598
+
+	;AnimCurveNode::break through.R, Model::Fence
+	C: "OP",74202934,79561388, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",74202934,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",72958924,74202934, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",77847576,74202934, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",76439020,74202934, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Fence
+	C: "OP",78501296,79561388, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",78501296,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",75055100,78501296, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",73153754,78501296, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",72400710,78501296, "d|Z"
+
+	;AnimCurveNode::break through.S, Model::Fence
+	C: "OP",75188221,79561388, "Lcl Scaling"
+
+	;AnimCurveNode::break through.S, AnimLayer::break through
+	C: "OO",75188221,76946918
+
+	;AnimCurve::break through.SX, AnimCurveNode::break through.S
+	C: "OP",79485793,75188221, "d|X"
+
+	;AnimCurve::break through.SY, AnimCurveNode::break through.S
+	C: "OP",70251851,75188221, "d|Y"
+
+	;AnimCurve::break through.SZ, AnimCurveNode::break through.S
+	C: "OP",72234591,75188221, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Gate
+	C: "OP",79458679,78674443, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",79458679,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",79825532,79458679, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",73158864,79458679, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",77612505,79458679, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Gate
+	C: "OP",77441783,78674443, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",77441783,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",72281918,77441783, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",71605348,77441783, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",73687392,77441783, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Nails
+	C: "OP",78217428,74406717, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",78217428,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",78238229,78217428, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",73617753,78217428, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",78080151,78217428, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Nails
+	C: "OP",71572394,74406717, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",71572394,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",72211104,71572394, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",73805805,71572394, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",77245927,71572394, "d|Z"
+
+	;AnimCurveNode::break through.S, Model::Nails
+	C: "OP",73585281,74406717, "Lcl Scaling"
+
+	;AnimCurveNode::break through.S, AnimLayer::break through
+	C: "OO",73585281,76946918
+
+	;AnimCurve::break through.SX, AnimCurveNode::break through.S
+	C: "OP",70942460,73585281, "d|X"
+
+	;AnimCurve::break through.SY, AnimCurveNode::break through.S
+	C: "OP",71027250,73585281, "d|Y"
+
+	;AnimCurve::break through.SZ, AnimCurveNode::break through.S
+	C: "OP",75657891,73585281, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Upper beam
+	C: "OP",78937255,71808303, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",78937255,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",79885728,78937255, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",71586976,78937255, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",76863681,78937255, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Upper beam
+	C: "OP",79358711,71808303, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",79358711,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",72486535,79358711, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",74066819,79358711, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",70936065,79358711, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Lower beam
+	C: "OP",76879315,79054346, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",76879315,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",77610296,76879315, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",71652604,76879315, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",79677629,76879315, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Lower beam
+	C: "OP",76319873,79054346, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",76319873,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",78409123,76319873, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",70620477,76319873, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",76580613,76319873, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Gate beam
+	C: "OP",73770968,77954592, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",73770968,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",74019894,73770968, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",71112909,73770968, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",76261055,73770968, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Gate beam
+	C: "OP",71905396,77954592, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",71905396,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",70775413,71905396, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",79324755,71905396, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",76863285,71905396, "d|Z"
+
+	;AnimCurveNode::break through.S, Model::Gate beam
+	C: "OP",78603377,77954592, "Lcl Scaling"
+
+	;AnimCurveNode::break through.S, AnimLayer::break through
+	C: "OO",78603377,76946918
+
+	;AnimCurve::break through.SX, AnimCurveNode::break through.S
+	C: "OP",77956726,78603377, "d|X"
+
+	;AnimCurve::break through.SY, AnimCurveNode::break through.S
+	C: "OP",77468281,78603377, "d|Y"
+
+	;AnimCurve::break through.SZ, AnimCurveNode::break through.S
+	C: "OP",75767313,78603377, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Right fence
+	C: "OP",70161369,72467610, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",70161369,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",70878753,70161369, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",70077626,70161369, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",74864866,70161369, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Right fence
+	C: "OP",72284590,72467610, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",72284590,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",74167948,72284590, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",74821000,72284590, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",73380532,72284590, "d|Z"
+
+	;AnimCurveNode::break through.S, Model::Right fence
+	C: "OP",73212413,72467610, "Lcl Scaling"
+
+	;AnimCurveNode::break through.S, AnimLayer::break through
+	C: "OO",73212413,76946918
+
+	;AnimCurve::break through.SX, AnimCurveNode::break through.S
+	C: "OP",79896343,73212413, "d|X"
+
+	;AnimCurve::break through.SY, AnimCurveNode::break through.S
+	C: "OP",71466869,73212413, "d|Y"
+
+	;AnimCurve::break through.SZ, AnimCurveNode::break through.S
+	C: "OP",71889282,73212413, "d|Z"
+
+	;AnimCurveNode::break through.R, Model::Left fence
+	C: "OP",74762484,78692325, "Lcl Rotation"
+
+	;AnimCurveNode::break through.R, AnimLayer::break through
+	C: "OO",74762484,76946918
+
+	;AnimCurve::break through.RX, AnimCurveNode::break through.R
+	C: "OP",76215092,74762484, "d|X"
+
+	;AnimCurve::break through.RY, AnimCurveNode::break through.R
+	C: "OP",75065258,74762484, "d|Y"
+
+	;AnimCurve::break through.RZ, AnimCurveNode::break through.R
+	C: "OP",75793441,74762484, "d|Z"
+
+	;AnimCurveNode::break through.P, Model::Left fence
+	C: "OP",79826195,78692325, "Lcl Translation"
+
+	;AnimCurveNode::break through.P, AnimLayer::break through
+	C: "OO",79826195,76946918
+
+	;AnimCurve::break through.PX, AnimCurveNode::break through.P
+	C: "OP",71375644,79826195, "d|X"
+
+	;AnimCurve::break through.PY, AnimCurveNode::break through.P
+	C: "OP",73233350,79826195, "d|Y"
+
+	;AnimCurve::break through.PZ, AnimCurveNode::break through.P
+	C: "OP",72692657,79826195, "d|Z"
+
+	;AnimCurveNode::break through.S, Model::Left fence
+	C: "OP",71755263,78692325, "Lcl Scaling"
+
+	;AnimCurveNode::break through.S, AnimLayer::break through
+	C: "OO",71755263,76946918
+
+	;AnimCurve::break through.SX, AnimCurveNode::break through.S
+	C: "OP",73870865,71755263, "d|X"
+
+	;AnimCurve::break through.SY, AnimCurveNode::break through.S
+	C: "OP",74206499,71755263, "d|Y"
+
+	;AnimCurve::break through.SZ, AnimCurveNode::break through.S
+	C: "OP",71779016,71755263, "d|Z"
 }
 
 ; Takes section
@@ -2321,4 +5390,14 @@ Connections:  {
 
 Takes:  {
 	Current: ""
+	Take: "Fall apart" {
+		FileName: "Fall apart.tak"
+		LocalTime: 0,98145585750
+		ReferenceTime: 0,98145585750
+	}
+	Take: "break through" {
+		FileName: "break through.tak"
+		LocalTime: 0,55808274250
+		ReferenceTime: 0,55808274250
+	}
 }

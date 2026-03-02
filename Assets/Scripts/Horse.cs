@@ -1,49 +1,36 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
 public class Horse : MonoBehaviour
 {
   public ObstacleManager obstacleManager;
 
-  [SerializeField]
-  private Rigidbody rb;
-
-  [SerializeField]
-  private LayerMask layerMask;
-
-  [SerializeField]
-  private float rotationSpeed = 5f;
+  [SerializeField] private Rigidbody rb;
+  [SerializeField] private LayerMask layerMask;
+  [SerializeField] private float rotationSpeed = 5f;
 
   [Header("Speed")]
-  [SerializeField]
-  private float maxRadius = 10f;
-
-  [SerializeField]
-  public float maxVelocity = 0.2f;
+  [SerializeField] private float maxRadius = 10f;
+  [SerializeField] public float maxVelocity = 0.2f;
 
   [Header("Jump")]
-  [SerializeField]
-  private float jumpMultiplier = 1f;
-
-  [SerializeField]
-  private float minJumpHeight = 1f;
-
-  [SerializeField]
-  private float maxJumpHeight = 4f;
-
-  [SerializeField]
-  private float jumpHeight;
-
-  [SerializeField]
-  private float velocityFactor = 1f;
-
-  [SerializeField]
-  private Animator animator;
-
+  [SerializeField] private float jumpMultiplier = 1f;
+  [SerializeField] private float minJumpHeight = 1f;
+  [SerializeField] private float maxJumpHeight = 4f;
+  [SerializeField] private float jumpHeight;
+  [SerializeField] private float velocityFactor = 1f;
   public float velocity = 0f;
   public int score = 0;
   public int health = 3;
+
+  public Animator animator;
+  public GameObject damage;
+  public GameObject healthPrefab;
+  public MeshRenderer ground;
+
+  public Material red;
+  public Material blue;
+  public Material green;
 
   private Camera cam;
   private GameObject sphere;
@@ -52,19 +39,48 @@ public class Horse : MonoBehaviour
   private bool isGrounded = true;
   private bool isChargingJump = false;
   private bool isDying = false;
+  private bool isInvincible = false;
+  private bool healthSpawned = false;
+  public bool GameStarted = false;
 
   void Start()
   {
     cam = Camera.main;
     sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-    sphere.GetComponent<MeshRenderer>().material.color = Color.red;
+    sphere.GetComponent<MeshRenderer>().material = red;
     Destroy(sphere.GetComponent<Collider>());
     sphere.transform.localScale = new(0.2f, 0.2f, 0.2f);
   }
 
   private void Update()
   {
+
+    if (!GameStarted)
+    {
+      if (Input.GetKeyDown(KeyCode.Space))
+      {
+        GameStarted = true;
+      }
+
+      return;
+    }
+
+    maxVelocity += .01f * Time.deltaTime;
+
     if (isDying) return;
+    if (health < 3 && !healthSpawned && score % 20 == 0)
+    {
+      healthSpawned = true;
+      float randomX = UnityEngine.Random.Range(
+          ground.bounds.min.x + 15,
+          ground.bounds.max.x - 15
+      );
+      float randomZ = UnityEngine.Random.Range(
+          ground.bounds.min.z + 15,
+          ground.bounds.max.z - 15
+      );
+      GameObject h = Instantiate(healthPrefab, new(randomX, .5f, randomZ), Quaternion.Euler(new(0, 0, 0)));
+    }
 
     if (health <= 0)
     {
@@ -92,6 +108,7 @@ public class Horse : MonoBehaviour
     transform.position = Vector3.zero;
     velocity = 0f;
     isDying = false;
+    isInvincible = false;
   }
 
   private void ApplyGravity()
@@ -120,7 +137,7 @@ public class Horse : MonoBehaviour
     if (Input.GetMouseButton(0) && velocity < maxVelocity)
     {
       velocity += Mathf.Min(mouseDirection.magnitude, maxRadius) * Time.deltaTime;
-      sphere.GetComponent<MeshRenderer>().material.color = Color.green;
+      sphere.GetComponent<MeshRenderer>().material = green;
     }
     else if (velocity > 0)
     {
@@ -129,7 +146,7 @@ public class Horse : MonoBehaviour
 
     if (Input.GetMouseButtonUp(0))
     {
-      sphere.GetComponent<MeshRenderer>().material.color = Color.red;
+      sphere.GetComponent<MeshRenderer>().material = red;
     }
 
     rb.position += transform.forward * Mathf.Max(velocity, 0) * Time.deltaTime;
@@ -146,6 +163,8 @@ public class Horse : MonoBehaviour
     if (Input.GetMouseButton(1) && isChargingJump && jumpHeight < maxJumpHeight)
     {
       jumpHeight += jumpMultiplier * Time.deltaTime;
+      sphere.transform.localScale = Vector3.one * jumpHeight * .5f;
+      sphere.GetComponent<MeshRenderer>().material = blue;
     }
 
     if (Input.GetMouseButtonUp(1) && isGrounded && isChargingJump)
@@ -154,15 +173,10 @@ public class Horse : MonoBehaviour
       float velocity = Mathf.Sqrt(finalHeight * -2 * Physics.gravity.y * 3f);
       rb.AddForce((Vector3.up * velocity) + transform.forward, ForceMode.Impulse);
 
+      sphere.transform.localScale = new(0.2f, 0.2f, 0.2f);
       isGrounded = false;
       isChargingJump = false;
     }
-  }
-
-  private void jump(float height)
-  {
-    float velocity = Mathf.Sqrt(height * -2 * Physics.gravity.y * 3f);
-    rb.AddForce(Vector3.up * velocity, ForceMode.Impulse);
   }
 
   private void MousePosition()
@@ -180,11 +194,29 @@ public class Horse : MonoBehaviour
 
   private void OnCollisionEnter(Collision collision)
   {
-    if (collision.gameObject.tag.Equals("hurdle"))
+    if (collision.gameObject.CompareTag("hurdle"))
     {
-      health--;
-      obstacleManager.RemoveObstacle(collision.transform.position);
+      if (!isInvincible)
+      {
+        health--;
+        velocity *= .5f;
+        StartCoroutine(InvincibilityCoroutine());
+      }
+
+      StartCoroutine(delayCall(1f, () =>
+      {
+        obstacleManager.RemoveObstacle(collision.transform.position);
+      }));
     }
+  }
+
+  private IEnumerator InvincibilityCoroutine()
+  {
+    isInvincible = true;
+    damage.SetActive(true);
+    yield return new WaitForSeconds(2f);
+    damage.SetActive(false);
+    isInvincible = false;
   }
 
   private void OnTriggerEnter(Collider other)
@@ -195,37 +227,27 @@ public class Horse : MonoBehaviour
       isChargingJump = false;
     }
 
+    if (other.gameObject.layer == 6)
+    {
+      health++;
+      Destroy(other.gameObject);
+      healthSpawned = false;
+    }
+
     if (other.gameObject.layer == 9 && Input.GetMouseButton(0))
     {
       score += 5;
+      other.gameObject.SetActive(false);
       StartCoroutine(delayCall(1f, () =>
       {
         obstacleManager.RemoveObstacle(other.transform.position);
       }));
     }
-
-    if (other.gameObject.layer == 6)
-    {
-      velocity *= 2;
-      Destroy(other.gameObject);
-    }
-
-    if (other.gameObject.layer == 7)
-    {
-      velocity *= 2;
-      Destroy(other.gameObject);
-    }
-
-    if (other.gameObject.layer == 8 && Input.GetMouseButton(1))
-    {
-      jump(3);
-      Destroy(other.gameObject);
-    }
   }
+
   public IEnumerator delayCall(float seconds, Action callback)
   {
     yield return new WaitForSeconds(seconds);
     callback();
   }
 }
-

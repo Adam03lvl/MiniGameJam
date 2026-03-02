@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - boost
   - obstacle
   - hurdle
+  - health
   layers:
   - Default
   - TransparentFX
@@ -14,7 +14,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - speed
+  - health
   - jump
   - parry
   - obstacle
